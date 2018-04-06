@@ -16,7 +16,7 @@ include_once('src/db.php');
 	
 	$result = $query->get_result();
 	if(!$result->num_rows) {
-		$balance = 0;
+		$balance = 1000;
 		$query = $db->prepare('INSERT INTO users (`username`, `balance`) VALUES (?, ?)');
 		$query->bind_param('si', $_GET['username'], $balance);
 	
